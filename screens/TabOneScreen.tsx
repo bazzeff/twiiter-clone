@@ -1,16 +1,45 @@
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '../components/EditScreenInfo';
+import {
+  ScrollView, 
+  TouchableOpacity,
+  ImageBackground,
+  FlatList,
+  StyleSheet,
+} from "react-native";
+import Search from '../components/common/SearchInput/Search'; 
 import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
+import { RootTabScreenProps } from '../types'; 
+import USERS from "../data/users";
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+    <ImageBackground
+    source={require("../assets/images/bg.png")}
+    style={styles.bg}
+  >
+    <View style={styles.containerMatches}>
+      <View style={styles.top}>
+        <Text style={styles.title}>Matches</Text>
+        <TouchableOpacity>
+          <Icon name="ellipsis-vertical" color={DARK_GRAY} size={20} />
+        </TouchableOpacity>
+      </View> 
+      <FlatList
+        numColumns={2}
+        data={DEMO}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => (
+          <TouchableOpacity>
+            <CardItem
+              image={item.image}
+              name={item.name}
+              isOnline={item.isOnline}
+              hasVariant
+            />
+          </TouchableOpacity>
+        )}
+      />
     </View>
+  </ImageBackground>
   );
 }
 
@@ -29,4 +58,7 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
+  header: {
+    marginTop: 50,
+  }
 });

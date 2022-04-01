@@ -12,7 +12,14 @@ declare global {
     interface RootParamList extends RootStackParamList {}
   }
 }
-
+//export type RootTopStackParamList = {};
+//export type RootTabScreenProps<Screen extends keyof RootTopStackParamList> = NativeStackScreenProps<
+//RootTopStackParamList,
+//  Screen
+//>;
+export type Navigation = {
+  navigate: (scene: string) => void;
+};
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   Modal: undefined;

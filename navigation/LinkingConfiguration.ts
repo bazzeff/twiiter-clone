@@ -1,4 +1,4 @@
-/**
+/** 
  * Learn more about deep linking with React Navigation
  * https://reactnavigation.org/docs/deep-linking
  * https://reactnavigation.org/docs/configuring-links
@@ -25,9 +25,25 @@ const linking: LinkingOptions<RootStackParamList> = {
               TabTwoScreen: 'two',
             },
           },
+          TabThree: {
+            screens: {
+              TabThreeScreen: 'three',
+            },
+          },
+          TabFour: {
+            screens: {
+              TabFourScreen: 'Four',
+            },
+          },
+          Profile: {
+            screens: {
+              Profile: 'Profile',
+            },
+          },
         },
       },
       Modal: 'modal',
+      //OneModal: 'modal',
       NotFound: '*',
     },
   },
