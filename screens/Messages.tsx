@@ -38,7 +38,7 @@ const Message = (props) => {
       tension={100} // These props are passed to the parent component (here TouchableScale)
       activeScale={0.95} //
       linearGradientProps={{
-        colors: ['#BA55D3', '#7444C0'],
+        colors: ['#808080', '#DCDCDC'],
         start: { x: 1, y: 0 },
         end: { x: 0.2, y: 0 },
       }}
@@ -116,7 +116,8 @@ const styles = StyleSheet.create({
      },
      ratingText: {
        paddingLeft: 10,
-       color: 'white'
+       color: 'white',
+       fontWeight: 'bold',
      },
      balloon: {
         maxWidth: 250,

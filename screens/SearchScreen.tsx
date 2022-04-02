@@ -22,10 +22,9 @@ const SearchScreen = () => {
       };
       getData();
     }, []);
-    
+   
   return (
     <SafeAreaView style={styles.root}>
-      {!clicked && <Text style={styles.title}>Programming Languages</Text>}
       <SearchBar
         searchPhrase={searchPhrase}
         setSearchPhrase={setSearchPhrase}

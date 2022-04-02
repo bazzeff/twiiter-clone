@@ -40,10 +40,28 @@ const linking: LinkingOptions<RootStackParamList> = {
               Profile: 'Profile',
             },
           },
+          Settings: {
+            screens: {
+              SettingsScreen: 'Settings',
+            },
+          },
+          ContactScreen: {
+            screens: {
+              ContactScreen: 'Contact',
+            },
+          }
         },
       },
       Modal: 'modal',
-      //OneModal: 'modal',
+      ContactModal: 'modal',
+      PaymentModal: 'modal',
+      PaymentSuccessModal: 'modal',
+      PaymentFailureModal: 'modal',
+      PaymentConfirmationModal: 'modal',
+      PaymentConfirmationSuccessModal: 'modal',
+      PaymentConfirmationFailureModal: 'modal',
+      CheckOutModal: 'modal',
+      SettingsModal: 'modal',
       NotFound: '*',
     },
   },

@@ -27,6 +27,19 @@ import Messages from '../screens/Messages';
 import PaymentScreen from '../screens/PaymentScreen';
 import CheckOutScreen from '../screens/CheckOutScreen';
 import SearchScreen from '../screens/SearchScreen';
+import SettingsScreen from '../screens/SettingsScreen';
+import ContactScreen from '../screens/ContactScreen';
+import NotificationScreen from '../screens/NotificationScreen';
+import AccountScreen from '../screens/AccountScreen';
+import FaqScreen from '../screens/FaqScreen';
+import SafetyTipsScreen from '../screens/SafetyTipsScreen';
+import ReportProblemScreen from '../screens/ReportProblemScreen';
+import PrivacyPolicyScreen from '../screens/PrivacyPolicyScreen';
+import SubscriptionScreen from '../screens/SubscriptionScreen';
+import StoreScreen from '../screens/StoreScreen';
+import ChatScreen from '../screens/ChatScreen';
+import ContactUsScreen from '../screens/ContactUsScreen';
+import FeedScreen from '../screens/FeedScreen';
 import {  RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 //Dashboard
@@ -52,9 +65,30 @@ function RootNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+      <Stack.Screen name="SettingsScreen" component={SettingsScreen} options={{ title: 'Settings' }} />
+      <Stack.Screen name="SearchScreen" component={SearchScreen} options={{ title: 'Search' }} />
+      <Stack.Screen name="AccountScreen" component={AccountScreen} options={{ title: 'Account' }} />
+      <Stack.Screen name="StoreScreen" component={StoreScreen} options={{ title: 'Store' }} />
+      <Stack.Screen name="SubscriptionScreen" component={SubscriptionScreen} options={{ title: 'Subscription' }} />
+      <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{ title: 'Profile' }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
       <Stack.Screen name="Modal" component={ModalScreen} />
+      <Stack.Screen name="ContactScreen" component={ContactScreen} options={{ title: 'Contact' }} />
+      <Stack.Screen name="PaymentScreen" component={PaymentScreen} options={{ title: 'Payment' }} />
+      <Stack.Screen name="CheckOutScreen" component={CheckOutScreen} options={{ title: 'CheckOut' }} />
+      <Stack.Screen name="Matches" component={Matches} options={{ title: 'Matches' }} />
+      <Stack.Screen name="Home" component={Home} options={{ title: 'Home' }} />
+      <Stack.Screen name="Profile" component={Profile} options={{ title: 'Home' }} />
+      <Stack.Screen name="Messages" component={Messages} options={{ title: 'Messages' }} />
+      <Stack.Screen name="NotificationScreen" component={NotificationScreen}  options={{ title: 'Notification' }} />
+      <Stack.Screen name="FaqScreen" component={FaqScreen} options={{ title: 'FAQ' }} />
+      <Stack.Screen name="SafetyTipsScreen" component={SafetyTipsScreen} options={{ title: 'Safety Tips' }} />
+      <Stack.Screen name="ReportProblemScreen" component={ReportProblemScreen} options={{ title: 'Report Problem' }} />
+      <Stack.Screen name="PrivacyPolicyScreen" component={PrivacyPolicyScreen} options={{ title: 'Privacy Policy' }} />
+      <Stack.Screen name="ChatScreen" component={ChatScreen} options={{ title: 'Chat' }} />
+      <Stack.Screen name="FeedScreen" component={FeedScreen} options={{ title: 'Feed' }} />
+      <Stack.Screen name="ContactUsScreen" component={ContactUsScreen} options={{ title: 'Contact Us' }} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -164,7 +198,7 @@ function BottomTabNavigator() {
           ),
           headerRight: () => (
             <Pressable
-              onPress={() => navigation.navigate('Modal')}
+              onPress={() => navigation.navigate('ContactScreen')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
@@ -180,7 +214,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="TabFour"
-        component={Matches}
+        component={NotificationScreen}
         options={({ navigation }: RootTabScreenProps<'TabFour'>) => ({
           title: 'Notification',
           tabBarIcon: ({ color }) => <TabBarIcon name="bell" color={color} />,
@@ -200,7 +234,7 @@ function BottomTabNavigator() {
           ),
           headerRight: () => (
             <Pressable
-              onPress={() => navigation.navigate('Modal')}
+              onPress={() => navigation.navigate('Matches')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
@@ -222,7 +256,7 @@ function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <EvilIcons name="user" size={40} color={color} />,
           headerLeft: () => (
             <Pressable
-              onPress={() => navigation.navigate('Modal')}
+              onPress={() => navigation.navigate('Home')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
@@ -236,7 +270,7 @@ function BottomTabNavigator() {
           ),
           headerRight: () => (
             <Pressable
-              onPress={() => navigation.navigate('Modal')}
+              onPress={() => navigation.navigate('SettingsScreen')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
