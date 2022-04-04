@@ -24,10 +24,12 @@ import Matches from '../screens/Matches';
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 import Messages from '../screens/Messages';
+import MessageViewScreen from '../screens/MessageViewScreen';
 import PaymentScreen from '../screens/PaymentScreen';
 import CheckOutScreen from '../screens/CheckOutScreen';
 import SearchScreen from '../screens/SearchScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import SettingScreen from '../screens/SettingScreen';
 import ContactScreen from '../screens/ContactScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import AccountScreen from '../screens/AccountScreen';
@@ -40,6 +42,17 @@ import StoreScreen from '../screens/StoreScreen';
 import ChatScreen from '../screens/ChatScreen';
 import ContactUsScreen from '../screens/ContactUsScreen';
 import FeedScreen from '../screens/FeedScreen';
+import TermsAndConditionScreen from '../screens/TermsAndConditionScreen';
+import ReturnRefundPolicyScreen from '../screens/ReturnRefundPolicyScreen';
+import CookiesPolicyScreen from '../screens/CookiesPolicyScreen';
+import DisclaimerScreen from '../screens/DisclaimerScreen';
+import ProfileEditScreen from '../screens/ProfileEditScreen';
+import DeleteAccountScreen from '../screens/DeleteAccountScreen';
+import PreferencesScreen from '../screens/PreferencesScreen';
+import ShareScreen from '../screens/ShareScreen';
+import PhotoEditScreen from '../screens/PhotoEditScreen';
+import PhotoVerifyScreen from '../screens/PhotoVerifyScreen';
+import TermsScreen from '../screens/TermsScreen';
 import {  RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 //Dashboard
@@ -71,6 +84,17 @@ function RootNavigator() {
       <Stack.Screen name="StoreScreen" component={StoreScreen} options={{ title: 'Store' }} />
       <Stack.Screen name="SubscriptionScreen" component={SubscriptionScreen} options={{ title: 'Subscription' }} />
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{ title: 'Profile' }} />
+      <Stack.Screen name="ProfileEditScreen" component={ProfileEditScreen} options={{ title: 'Edit Profile' }} />
+      <Stack.Screen name="FeedScreen" component={FeedScreen} options={{ title: 'Feed' }} />
+      <Stack.Screen name="FaqScreen" component={FaqScreen} options={{ title: 'FAQ' }} />
+      <Stack.Screen name="NotificationScreen" component={NotificationScreen}  options={{ title: 'Notification' }} />
+      <Stack.Screen name="PreferencesScreen" component={PreferencesScreen} options={{ title: 'Preferences' }} />
+      <Stack.Screen name="PhotoVerifyScreen" component={PhotoVerifyScreen} options={{ title: 'Photo Verify' }} />
+      <Stack.Screen name="PhotoEditScreen" component={PhotoEditScreen} options={{ title: 'Edit Photo' }} />
+      <Stack.Screen name="SettingScreen" component={SettingScreen} options={{ title: 'Settings' }} />
+      <Stack.Screen name="TermsScreen" component={TermsScreen} options={{ title: 'Terms and Agreements' }} />
+      <Stack.Screen name="MessageViewScreen" component={MessageViewScreen} options={{ title: 'Message Detail' }} /> 
+      <Stack.Screen name="ShareScreen" component={ShareScreen} options={{ title: 'Share' }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
       <Stack.Screen name="Modal" component={ModalScreen} />
@@ -81,14 +105,16 @@ function RootNavigator() {
       <Stack.Screen name="Home" component={Home} options={{ title: 'Home' }} />
       <Stack.Screen name="Profile" component={Profile} options={{ title: 'Home' }} />
       <Stack.Screen name="Messages" component={Messages} options={{ title: 'Messages' }} />
-      <Stack.Screen name="NotificationScreen" component={NotificationScreen}  options={{ title: 'Notification' }} />
-      <Stack.Screen name="FaqScreen" component={FaqScreen} options={{ title: 'FAQ' }} />
       <Stack.Screen name="SafetyTipsScreen" component={SafetyTipsScreen} options={{ title: 'Safety Tips' }} />
       <Stack.Screen name="ReportProblemScreen" component={ReportProblemScreen} options={{ title: 'Report Problem' }} />
       <Stack.Screen name="PrivacyPolicyScreen" component={PrivacyPolicyScreen} options={{ title: 'Privacy Policy' }} />
+      <Stack.Screen name="TermsAndConditionScreen" component={TermsAndConditionScreen} options={{ title: 'Terms and Condition'}} />
+      <Stack.Screen name="ReturnRefundPolicyScreen" component={ReturnRefundPolicyScreen} options={{ title: 'Return & Refund Policy'}} />
+      <Stack.Screen name="CookiesPolicyScreen" component={CookiesPolicyScreen} options={{ title: 'Cookies Policy'}} />
+      <Stack.Screen name="DisclaimerScreen" component={DisclaimerScreen} options={{ title: 'Disclaimer'}} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} options={{ title: 'Chat' }} />
-      <Stack.Screen name="FeedScreen" component={FeedScreen} options={{ title: 'Feed' }} />
       <Stack.Screen name="ContactUsScreen" component={ContactUsScreen} options={{ title: 'Contact Us' }} />
+      <Stack.Screen name="DeleteAccountScreen" component={DeleteAccountScreen} options={{ title: 'Delete Account' }} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -111,7 +137,7 @@ function BottomTabNavigator() {
       }}>
       <BottomTab.Screen
         name="TabOne"
-        component={Home}
+        component={SettingsScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
           title: 'Home',
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,

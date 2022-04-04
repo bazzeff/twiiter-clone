@@ -1,11 +1,10 @@
-import { StyleSheet,ScrollView, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const SafetyTipsScreen = () => {
+const CookiesPolicyScreen = () => {
   return (
     <View style={styles.container}>
-      <ScrollView>
-      <Text style={styles.title}>Safety Tips</Text>
+      <Text style={styles.title}>Cookies Policy</Text>
       <View>
         <Text style={styles.description}>
         Here are our top 10 tips to stay safe on social media:
@@ -21,12 +20,11 @@ Protect your computer by installing antivirus software to safeguard.  Also ensur
 Remember to log off when you’re done.
         </Text>
       </View>
-      </ScrollView>
     </View>
   )
 }
 
-export default SafetyTipsScreen
+export default CookiesPolicyScreen
 
 const styles = StyleSheet.create({
   container: {

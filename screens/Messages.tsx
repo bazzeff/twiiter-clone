@@ -32,7 +32,7 @@ const Message = (props) => {
   {
     USERS.map((l, i) => (
       <TouchableOpacity>
-      <ListItem key={i} 
+      <ListItem key={i}
       style={styles.messageContainer}
       friction={90} //
       tension={100} // These props are passed to the parent component (here TouchableScale)

@@ -17,11 +17,11 @@ export default class ContactUsScreen extends Component {
     super(props);
     state = {
       email   : '',
-      password: '',
+      name: '',
     }
   }
 
-  onClickListener = (viewId) => {
+  onClickListener = (send) => {
     Alert.alert("Alert", "Button pressed "+viewId);
   }
 
@@ -35,7 +35,7 @@ export default class ContactUsScreen extends Component {
           <TextInput style={styles.inputs}
               placeholder="Name"
               underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/>
+              onChangeText={(name) => this.setState({name})}/>
         </View>
         
         <View style={styles.inputContainer}>
@@ -43,19 +43,19 @@ export default class ContactUsScreen extends Component {
           <TextInput style={styles.inputs}
               placeholder="Email"
               underlineColorAndroid='transparent'
-              onChangeText={(password) => this.setState({password})}/>
+              onChangeText={(email) => this.setState({email})}/>
         </View>
 
         
-        <View style={styles.inputContainer}>
+        <View style={styles.messageContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/speech-bubble/ultraviolet/50'}}/>
-          <TextInput style={[ styles.messageInput]}
+          <TextInput style={[ styles.inputs]}
               placeholder="Message"
               underlineColorAndroid='transparent'
-              onChangeText={(password) => this.setState({password})}/>
+              onChangeText={(message) => this.setState({message})}/>
         </View>
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.sendButton]} onPress={() => this.onClickListener('login')}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.sendButton]} onPress={() => this.onClickListener('send')}>
           <Text style={styles.buttonText}>Send</Text>
         </TouchableHighlight>
       </View>
@@ -83,6 +83,17 @@ const styles = StyleSheet.create({
       borderBottomWidth: 1,
       width:250,
       height:45,
+      marginBottom:20,
+      flexDirection: 'row',
+      alignItems:'center'
+  },
+  messageContainer: {
+      borderBottomColor: '#F5FCFF',
+      backgroundColor: '#FFFFFF',
+      borderRadius:30,
+      borderBottomWidth: 1,
+      width:250,
+      height: 160,
       marginBottom:20,
       flexDirection: 'row',
       alignItems:'center'

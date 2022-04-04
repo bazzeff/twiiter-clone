@@ -3,6 +3,8 @@ import React from 'react'
 import { ListItem, Avatar, Icon } from 'react-native-elements'
 import { NativeStackScreenProps, createNativeStackNavigator } from '@react-navigation/native-stack';
 import {  RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
+import { AntDesign } from '@expo/vector-icons'; 
+import { Button } from 'react-native-elements';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -12,22 +14,28 @@ type RootStackParamList = {
   NotificationScreen: undefined;
   ContactUsScreen: undefined;
   SettingsScreen: undefined;
+  SettingScreen: undefined;
   FaqScreen: undefined;
   SafetyTipsScreen: undefined;
   ReportProblemScreen: undefined;
-  PrivacyPolicyScreen: undefined;
   SubscriptionScreen: undefined;
   PaymentScreen: undefined;
   StoreScreen: undefined;
   ProfileScreen: undefined;
+  TermsScreen: undefined;
   Profile: { userId: string };
+  PhotoVerifyScreen: undefined;
+  PhotoEditScreen: undefined;
+  ProfileEditScreen: undefined;
+  PreferencesScreen: undefined;
+  ShareScreen: undefined;
   FeedScreen: { sort: 'latest' | 'top' } | undefined;
 };
 const list = [
   {
-    title: 'Account',
+    title: 'Edit Profile',
     icon: 'account-box',
-    url: 'AccountScreen',
+    url: 'ProfileEditScreen',
   },
   {
     title: 'Notifications',
@@ -47,7 +55,7 @@ const list = [
   {
     title: 'Settings',
     icon: 'settings',
-    url: 'SettingsScreen'
+    url: 'SettingScreen'
   },
   {
     title: 'FAQ',
@@ -65,9 +73,9 @@ const list = [
     url: 'ReportProblemScreen'
   },
   {
-    title: 'Privacy Policy',
+    title: 'Terms and Agreements',
     icon: 'policy',
-    url: 'PrivacyPolicyScreen'
+    url: 'TermsScreen'
   },
   {
     title: 'Subscription',
@@ -83,6 +91,31 @@ const list = [
     title: 'Store',
     icon: 'store',
     url: 'StoreScreen'
+  },
+  {
+    title: 'Invite a Friend',
+    icon: 'share',
+    url: 'ShareScreen'
+  },
+  {
+    title: 'Photo Verified',
+    icon: 'verified-user',
+    url: 'PhotoVerifyScreen'
+  },
+  {
+    title: 'Edit Photo',
+    icon: 'photo',
+    url: 'PhotoEditScreen'
+  },
+  {
+    title: 'Preferences',
+    icon: 'room-preferences',
+    url: 'PreferencesScreen'
+  },
+  {
+    title: 'Delete Account',
+    icon: 'delete',
+    url: 'DeleteAccountScreen'
   },
   
 ]
@@ -106,6 +139,8 @@ const SettingsScreen = ({ route, navigation }: Props) => {
       onPress={() =>  navigation.navigate('ProfileScreen')}
       >
         John Doe</Text>
+        <Text style={styles.subtitle}>
+        status</Text>
       <View>
   {
     list.map((item, i) => (
@@ -119,6 +154,19 @@ const SettingsScreen = ({ route, navigation }: Props) => {
     ))
   }
 </View>
+<View style={styles.detailContent}>
+      <Button
+       style={{ marginBottom: 20 }}
+  icon={
+    <Icon
+      name="logout"
+      size={15}
+      color="white"
+    />
+  }
+  title="Logout"
+/>
+      </View>
 </ScrollView>
     </View>
   )
@@ -131,12 +179,35 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     alignSelf: 'center',
-    marginTop: 20,
-    marginBottom: 20,
+    marginTop: 15,
+    marginBottom: 2,
+  },
+  subtitle: {
+    fontSize: 15,
+    alignSelf: 'center',
+    marginTop: 2,
+    marginBottom: 2,
   },
   avatar: {
     alignSelf: 'center',
     marginTop: 20,
+  },
+  buttonContainer: {
+    marginTop:10,
+    marginLeft:10,
+    height:45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:20,
+    width:250,
+    borderRadius: 60,
+    color: 'white',
+    backgroundColor: "#841584",
+  },
+  detailContent:{
+    margin:10,
+    alignItems: 'center'
   },
   list: {
     margin: 2,
